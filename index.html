@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik 24</title>
+
+    <!-- Font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- File CSS external -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- [A] HEADER & MENU -->
+    <header class="navbar">
+        <div class="container navbar-isi">
+            <a href="#" class="logo">Klinik 24.</a>
+
+            <input type="checkbox" id="toggle-menu">
+            <label for="toggle-menu" class="hamburger" aria-label="Buka menu">&#9776;</label>
+
+            <nav class="menu">
+                <ul class="menu-link"> 
+                    <li><a href="#beranda" class="aktif">Beranda</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#kontak">Kontak Kami</a></li>
+                </ul>
+                <div class="menu-tombol">
+                    <a href="#" class="tombol">
+                        <img src="pasient.png" alt="Ikon"> 
+                        <span>Register Pasien</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- [/A] -->
+
+    <main>
+        <!-- [B] HERO -->
+        <section id="beranda" class="hero">
+            <div class="container hero-isi">
+                <div class="hero-teks">
+                    <h1>Klinik 24 siap melayani keluhan masyarakat Selama 24/7.</h1>
+                    <p>Rumah sakit adalah bagian dari suatu organisasi sosial dan kesehatan</p>
+                    <p>dengan fungsi menyediakan pelayanan paripurna (komprehensif)</p>
+
+                    <div class="menu-tombol" style="margin-top: 24px;">
+                        <a href="#" class="tombol">
+                            <img src="pasient.png" alt="Ikon">
+                            <span>Lihat Layanan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-gambar">
+                <img src="Object.png" alt="Dokter berjas putih dengan stetoskop">
+            </div>
+        </section>
+       
+
+
+        <!-- [C] PARTNER -->
+        <section class="partner">
+            <div class="container">
+                <h2 class="partner-judul">Partner &amp; Friend</h2>
+                <ul class="partner-list">
+                    <li><img src="partner.1.png" alt="Karmen Pet Hospital"></li>
+                    <li><img src="partner.2.png" alt="Ciputra"></li>
+                    <li><img src="partner.3.png" alt="St. Jude Children's Research Hospital"></li>
+                    <li><img src="partner.4.png" alt="Mayapada Hospital"></li>
+                    <li><img src="partner.5.png" alt="Siloam Hospitals"></li>
+                </ul>
+            </div>
+            <!-- [/C] -->
+        </section>
+        <!-- [/B]-->
+
+
+        <!-- [D] LAYANAN SPESIALIS -->
+        <section id="layanan" class="bagian">
+            <div class="container">
+                <!-- kotak pembungkus biar sejajar ke samping-->
+                <div class="layanan-header">
+                    <h1 class="judul-bagian">Daftar Layanan</h1>
+                    <p>Rumah sakit adalah bagian integral dari suatu organisasi sosial dan kesehatan dengan fungsi menyediakan pelayanan paripurna (komprehensif).</p>
+                </div>
+
+                <div class="layanan-list">
+                    <article class="kartu">
+                        <div class="kartu-ikon"><img src="apotek.png" alt=""></div>
+                        <h3>Apotek 24 jam</h3>
+                        <p>Toko tempat meramu dan menjual obat berdasarkan resep dokter serta memperdagangkan barang medis.</p>
+                        <a href="#kontak" class="kartu-btn">
+                            <img src="whatsapp.png" alt="">
+                            <span>Reservasi</span>
+                        </a>
+                    </article>
+                    <article class="kartu">
+                        <div class="kartu-ikon"><img src="medical.png" alt=""></div>
+                        <h3>Medical Chek Up</h3>
+                        <p>Toko tempat meramu dan menjual obat berdasarkan resep dokter serta memperdagangkan barang.</p>
+                        <a href="#kontak" class="kartu-btn">
+                            <img src="whatsapp.png" alt="">
+                            <span>Reservasi</span>
+                        </a>
+                    </article>
+                    <article class="kartu">
+                        <div class="kartu-ikon"><img src="professional.png" alt=""></div>
+                        <h3>Profesional Doctor</h3>
+                        <p>Toko tempat meramu dan menjual obat berdasarkan resep dokter serta memperdagangkan barang medis.</p>
+                        <a href="#kontak" class="kartu-btn">
+                            <img src="whatsapp.png" alt="">
+                            <span>Reservasi</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- [/D] -->
+
+        <!-- [E] TENTANG PELAYANAN -->
+        <section id="tentang" class="bagian">
+            <div class="dua-kolom">
+                <img class="foto" src="pelayanan.png" alt="Gedung pelayanan kesehatan">
+                <div class="teks">
+                    <h2 class="judul-bagian">Pelayanan terbaik dari para Ahli Medis</h2>
+                    <p>Rumah sakit adalah bagian integral dari suatu organisasi sosial dan kesehatan dengan fungsi menyediakan pelayanan paripurna (komprehensif).</p>
+                    <a href="#tentang" class="kartu-btn">
+                        <img src="whatsapp.png" alt="">
+                        <span>Reservasi</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- [/E] -->
+
+        <!-- [F] FASILITAS -->
+        <section id="fasilitas" class="bagian">
+            <div class="container dua-kolom">
+                <div class="teks">
+                    <h2 class="judul-bagian">Fasilitas Mewah yang<br>memanusiakan manusia</h2>
+                    <p>Rumah sakit adalah bagian integral dari suatu organisasi sosial dan kesehatan dengan fungsi menyediakan pelayanan paripurna (komprehensif).</p>
+                    <a href="#kontak" class="kartu-btn">
+                        <img src="whatsapp.png" alt="">
+                        <span>Reservasi</span>
+                    </a>
+                </div>
+                <img class="foto" src="fasilitas-lengkap.png" alt="Perincian fasilitas pelayanan kesehatan">
+            </div>
+        </section>
+         
+        <!-- [/F] -->
+
+        <!-- [H] RESERVASI PELAYANAN -->
+        <section id="reservasi-cta" class="bagian">
+            <div class="container">
+                <div class="cta-kotak">
+                    <h2>Reservasi Pelayanan kami sekarang</h2>
+                    <p>Rumah sakit adalah bagian integral dari suatu organisasi sosial dan kesehatan dengan fungsi menyediakan pelayanan paripurna (komprehensif).</p>
+                    <div class="cta-aksi">
+                        <a href="#jadwal" class="cta-btn-outline">
+                            <img src="calendar.png" alt="">
+                            <span>Cek Jadwal Dokter</span>
+                        </a>
+                        <a href="#kontak" class="cta-btn-putih">
+                            <img src="whatsapp-biru.png" alt="">
+                            <span>Reservasi</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- [/H] -->
+
+        <!-- [I] TESTIMONIAL BY PASIEN -->
+        <section id="testimoni" class="bagian">
+            <div class="container testimoni-wadah">
+                <div class="testimoni-header">
+                    <h2 class="judul-bagian">Testimonial by Pasien</h2>
+                    <p>Rumah sakit adalah bagian integral dari suatu organisasi sosial dan kesehatan dengan fungsi menyediakan pelayanan paripurna (komprehensif).</p>
+                </div>
+
+                <div class="testimoni-grid">
+                    <figure class="testimoni-kartu">
+                        <blockquote>
+                            Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </blockquote>
+                        <figcaption class="testimoni-profil">
+                            <img src="pasien.png" alt="Foto Rifki Abdurachman">
+                            <div>
+                                <strong>Rifki Abdurachman</strong>
+                                <small>Product Designer</small>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimoni-kartu">
+                        <blockquote>
+                            Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </blockquote>
+                        <figcaption class="testimoni-profil">
+                            <img src="pasien.png" alt="Foto Rifki Abdurachman">
+                            <div>
+                                <strong>Rifki Abdurachman</strong>
+                                <small>Product Designer</small>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimoni-kartu">
+                        <blockquote>
+                            Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </blockquote>
+                        <figcaption class="testimoni-profil">
+                            <img src="pasien.png" alt="Foto Rifki Abdurachman">
+                            <div>
+                                <strong>Rifki Abdurachman</strong>
+                                <small>Product Designer</small>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimoni-kartu">
+                        <blockquote>
+                            Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </blockquote>
+                        <figcaption class="testimoni-profil">
+                            <img src="pasien.png" alt="Foto Rifki Abdurachman">
+                            <div>
+                                <strong>Rifki Abdurachman</strong>
+                                <small>Product Designer</small>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- [/I] -->
+
+        <!-- [J] FOOTER -->
+        <footer id="kontak" class="footer">                 <!-- target id="#kontak" agar tautan menu/tombol bisa melompat ke sini -->
+            <div class="container footer-isi">                          <!-- pembungkus isi utama footer di dalam kontainer -->
+                <div class="footer-brand">                              <!-- kolom kiri: identitas klinik, alamat, dan ikon media sosial -->
+                    <a href="#beranda-hero" class="logo footer-logo">Klinik 24.</a> <!-- tautan balik ke bagian atas/beranda -->
+                    <p class="footer-alamat">Jl. Gatot Subroto Kav. 29 Ciputat,<br>Jakarta Selatan, DKI Jakarta, Indonesia 12340</p> <!-- alamat singkat klinik -->
+                    <div class="sosial"> <!-- wadah ikon media sosial -->
+                        <a href="#" aria-label="YouTube"><img src="yt.png" alt="YouTube"></a> <!-- ikon facebook -->
+                        <a href="#" aria-label="facebook"><img src="fb.png" alt="Facebook"></a> <!-- ikon instagram -->
+                        <a href="#" aria-label="whatsapp"><img src="whatsapp-last.png" alt="whatsapp"></a> <!-- ikon youtube -->
+                    </div>
+                </div>
+
+                <div class="footer-kolom"> <!-- kolom 2: informasi perusahaan -->
+                    <h4>Company Info</h4> <!-- judul kolom -->
+                    <ul class="footer-link"> <!-- daftar tautan navigasi footer -->
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#karir">Karir</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#layanan">Info Layanan</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-kolom"> <!-- kolom 3: daftar cabang -->
+                    <h4>Cabang</h4> <!-- judul kolom -->
+                    <ul class="footer-link"> <!-- daftar lokasi cabang -->
+                        <li><a href="#kontak">Tangerang</a></li>
+                        <li><a href="#kontak">Jakarta</a></li>
+                        <li><a href="#kontak">Surabaya</a></li>
+                        <li><a href="#kontak">Bekasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-kolom"> <!-- kolom 4: informasi kontak -->
+                    <h4>Kontak Kami</h4> <!-- judul kolom -->
+                    <ul class="footer-link"> <!-- rincian kontak dan jam/telepon -->
+                        <li><a href="tel:+6285544665454">+6285544665454</a></li>
+                        <li><a href="mailto:info@klinik24.com">info@klinik24.com</a></li>
+                        <li><span>Telp: +55465644554</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container hak-cipta"> <!-- baris hak cipta di bagian paling bawah footer -->
+                Copyright &copy; Klinik24 2026
+            </div>
+        </footer>
+        <!-- [/J] -->
+    </main>
+</body>
+</html>
+

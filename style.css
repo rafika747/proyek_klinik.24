@@ -1,0 +1,722 @@
+@layer reset {
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }  
+    body, h1, h2, h3, h4, p, ul, figure, blockquote {
+        margin: 0;
+    }  
+    ul {
+        padding: 0;                       
+        list-style: none;
+    } 
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    input, select, button {
+        font: inherit;
+        color: inherit;
+    }
+}
+
+/* ==== [1] DASAR ==== */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6C7A89;       /* Diubah agar teks biasa warnanya jelas */
+    background: #F4F8FF;
+}
+
+h1, h2, h3, h4 {
+    color: #021526;       /* Diubah dari aqua jadi warna gelap profesional */
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.container {
+    width: 100%;
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Tombol bulat */
+.tombol {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(95deg, #3A8EF6 0%, #5B6AF8 100%); /* Gradasi biru-ungu lembut */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 8px 20px rgba(58, 142, 246, 0.35); /* Efek banyangan lembut */
+}
+.tombol:hover {
+    opacity: 0.92;
+}
+.tombol img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* ==== [A] HEADER & MENU ==== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #e1eeff;
+}
+
+.navbar-isi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #0360d9;
+    padding-right: 26px;
+}
+
+.logo::after {
+    content: "+";
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;      
+    background: #0360d9;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#toggle-menu { display: none; }
+
+.hamburger {
+    font-size: 28px;
+    line-height: 1;
+    color: #021526;
+    cursor: pointer;
+    display: none;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    margin-left: 60px;
+}
+
+.menu-link {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    margin: 0 auto;
+}
+
+.menu-link a {
+    position: relative;
+    display: inline-block;
+    padding: 6px 0;
+    color: #6b7c93;       /* Diubah dari e1eeff agar tulisannya kelihatan */
+    font-weight: 500;
+}
+.menu-link a:hover,
+.menu-link a.aktif {
+    color: #0360d9;
+}
+
+/* ==== [B] HERO ==== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: #F4F8FF;
+}
+
+.hero-isi {
+    padding-top: 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    max-width: 666px;
+    margin-bottom: 20px;
+    color: #3A8EF6;
+    line-height: 1.25;
+}
+
+.sorot {
+    position: relative;
+    color: #0360d9;
+    white-space: nowrap;
+}
+.sorot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: -6px;
+    bottom: -10px;
+    height: 14px;
+    border-bottom: 3px solid #0360d9;
+    border-radius: 0 0 50% 50%;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        min-height: 600px; /* buat foto area hero tingginya pas */
+        display: flex;
+        align-items: center;
+    }
+    .hero-isi {
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+    .hero-teks {
+        max-width: 666px;
+    }
+    .hero-gambar {
+        position: absolute;
+        right: 18%;
+        bottom: 0;
+        width: 460px;   /* gambar area gambar di perbesar */
+        height: 95%;
+    }
+    .hero-gambar img {
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+        height: 95%;        /* tinggi gambar dokter */
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+/* ==== [C] PARTNER ==== */
+.partner {
+    background: #E2EDFF;             /* warna latar biru muda khusus bagian partner */
+    padding: 40px 0;                 /* jarak atas-bawah section */
+    text-align: center;              /* judul rata tengah */
+}
+
+.partner-judul {
+    font-size: 32px;
+    font-weight: 700;
+    color: #021526;                  /* warna teks judul gelap */
+    margin-bottom: 28px;             /* jarak judul ke deretan logo */
+}
+
+.partner-list {
+    display: flex;                   /* membuat logo berderet ke samping */
+    flex-wrap: wrap;                 /* turun ke baris baru jika layar sempit */
+    justify-content: center;         /* posisi logo tepat di tengah */
+    align-items: center;             /* logo sejajar vertikal di tengah */
+    gap: 48px;                       /* jarak antar logo */
+}
+
+.partner-list img {
+    height: 44px;                    /* tinggi semua logo diseragamkan */
+    width: auto;                     /* lebar menyesuaikan otomatis agar tidak gepeng */
+    object-fit: contain;
+}
+
+/* ==== [D] DAFTAR LAYANAN ==== */
+#Layanan .judul-bagian { 
+    margin-bottom: 32px; 
+}
+.layanan-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.layanan-header .judul-bagian {
+    margin-bottom: 0;
+}
+.layanan-header p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #6C7A89;
+    max-width: 420px;
+    opacity: 0.8;
+    margin: 0;
+}
+.layanan-list {
+  display: grid;
+  grid-template-columns: 1fr;      /* ponsel: 1 kolom */
+  gap: 24px;
+  align-items: stretch;            /* tinggi tiap kartu sama rata */
+}
+.kartu {
+  display: flex;
+  flex-direction: column;          /* susun isi dari atas ke bawah dengan rapi */
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  min-height: 341px;
+}
+
+.kartu-ikon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;             /* ikon di tengah lingkaran */
+  border-radius: 50%;
+  background: #e1eeff;
+}
+.kartu-ikon img { width: 34px; }
+
+.kartu h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #021526;
+}
+.kartu p {
+  font-size: 14px;
+  color: #6C7A89;
+  margin-bottom: 8px;
+}
+.kartu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;                         /* jarak antara gambar ikon dan tulisan Reservasi */
+  align-self: flex-start;          /* ukuran tombol pas sesuai isi, tidak melebar penuh */
+  margin-top: auto;                /* mendorong tombol sejajar di bagian bawah kartu */
+  padding: 10px 28px;
+  border-radius: 999px;
+  background: linear-gradient(95deg, #3A8EF6 0%, #5B6AF8 100%); /* Gradasi biru-ungu lembut */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(58, 142, 246, 0.35); /* Efek banyangan lembut */
+}
+.kartu-btn img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Kartu yang di-hover berubah biru */
+.kartu:hover {
+  background: #0360d9;
+  border-color: #0360d9;
+  color: #e1eeff;
+}
+.kartu:hover h3,
+.kartu:hover p {
+  color: #ffffff;
+}
+.kartu:hover .kartu-ikon {
+  background: #ffffff;
+}
+.kartu:hover .kartu-btn {
+  background: #ffffff;
+  color: #0360d9;
+}
+#Layanan.bagian {
+    padding-top: 96px;       /* beri jarak lega dari pembatas biru muda di atas */
+}
+@media (min-width: 768px) {
+    .layanan-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    #layanan.bagian {
+        padding-top: 100px;  /* jarak lega atas di layar desktop */
+    }
+    #layanan .layanan-header {
+        max-width: 1078px;        /* lebar pas sejajar ujung kiri kotak 1 sampai ujung kanan kotak 3 */
+        margin: 0 auto 32px;        /* posisi di tengah sama seperti .layanan-list */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .layanan-list {
+        grid-template-columns: repeat(3, 346px);        /* buat deret ke samping jadi 3 */
+        justify-content: center;
+    }
+}
+
+/* ==== [E] TENTANG PELAYANAN ==== */
+/* .dua-kolom dan .teks juga dipakai di bagian F dan G */
+#tentang.bagian {
+    margin-top: 96px;
+}
+#pelayanan.bagian {
+    margin-top: 96px;               /* jarak dari bagian kartu di atasnya */
+}
+.dua-kolom {
+    display: grid;                      
+    grid-template-columns: 1fr;         /* ponsel: 1 kolom */
+    gap: 40px;
+    align-items: center;                /* foto & teks sejajar di tengah */
+}
+.foto {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.teks {
+    display: grid;
+    gap: 20px;                  /* jarak antar judul, paragraf, link */
+    justify-items: start;       /* link tidak melebar penuh */
+}
+.teks .judul-bagian {
+    font-size: 36px;                 /* ukuran judul agar pas 2 baris */
+    line-height: 1.25;               /* jarak antar baris judul */
+    margin: 0;                       /* ngilangkan margin bawah bawaan jika ada */
+}
+.teks p {
+    font-size: 15px;
+    line-height: 24px;
+    color: #6C7A89;
+    max-width: 440px;
+}
+
+@media (min-width: 1024px) {
+    #tentang.bagian {
+        margin-top: 112px;
+    }
+
+    #tentang .dua-kolom {
+        max-width: 1110px;           /* selaras dengan lebar 1110 di Figma */
+        margin: 0 auto;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 42px;                   /* acuan gap di Figma */
+    }
+}
+
+/* ==== [F] ==== */
+#fasilitas.bagian {
+    margin-top: 80px;                /* jarak atas di layar kecil agar tidak mepet */
+    padding-top: 16px;
+}
+
+#fasilitas .dua-kolom {
+    align-items: center;             /* teks dan gambar sejajar vertikal */
+}
+
+#fasilitas .foto {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    #fasilitas.bagian {
+        margin-top: 96px;            /* jarak atas lebih lega di tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    #fasilitas.bagian {
+        margin-top: 128px;           /* jarak atas lega dari bagian di atasnya */
+    }
+
+    #fasilitas .dua-kolom {
+        max-width: 1110px;           /* samakan lebar dan posisi tengah dengan bagian lain */
+        margin: 0 auto;
+        grid-template-columns: 0.9fr 1.1fr; /* teks di kiri, ruang gambar perincian di kanan */
+        gap: 56px;
+    }
+}
+
+/* ==== [H] RESERVASI PELAYANAN ==== */
+#reservasi-cta.bagian {
+    margin-top: 80px;
+}
+.cta-kotak {
+    width: 100%;
+    max-width: 1110px;              /* sesuai lebar di Figma (W 1110) */
+    min-height: 329px;              /* sesuai tinggi di Figma (H 329) */
+    margin: 0 auto;                 /* posisikan tepat di tengah layar */
+    padding: 40px 24px;
+    border-radius: 24px;
+    background: linear-gradient(95deg, #3A8EF6 0%, #5B6AF8 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(58, 142, 246, 0.35); /* Efek banyangan lembut */
+}
+
+.cta-kotak h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.cta-kotak p {
+    max-width: 560px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.cta-aksi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-btn-outline,
+.cta-btn-putih {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cta-btn-outline {
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.cta-btn-putih {
+    color: #3A8EF6;
+    background: #ffffff;
+}
+
+@media (min-width: 1024px) {
+    #reservasi-cta.bagian {
+        margin-top: 112px;
+    }
+
+    .cta-kotak {
+        padding: 48px 40px;
+    }
+}
+
+/* ==== [I] TESTIMONIAL BY PASIEN ==== */
+#testimoni.bagian {
+    margin-top: 96px;
+}
+
+.testimoni-wadah {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.testimoni-header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 48px;
+}
+
+.testimoni-header .judul-bagian {
+    font-size: 32px;
+    color: #021526;
+    margin-bottom: 12px;
+}
+
+.testimoni-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6C7A89;
+    margin: 0;
+}
+
+.testimoni-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.testimoni-kartu {
+    margin: 0;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.testimoni-kartu blockquote {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6C7A89;
+}
+
+.testimoni-profil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testimoni-profil img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimoni-profil strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #021526;
+}
+
+.testimoni-profil small {
+    display: block;
+    font-size: 12px;
+    color: #6C7A89;
+}
+
+@media (min-width: 768px) {
+    .testimoni-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #testimoni.bagian {
+        margin-top: 128px;
+    }
+}
+
+/* ==== [J] FOOTER ==== */
+.footer {                               /* latar belakang biru tua */
+    background: #0A0E31;            
+    color: #ffffff; 
+    margin-top: 80px;                   /* jarak atas dari bagian testimoni di atasnya */
+    padding-top: 64px;                  /* ruang napas atas di dalam footer */
+}
+
+.footer-isi {                           /* susunan kolom footer */
+    display: grid;                      /* pakai grid agar kolom rapi dan responsif */
+    grid-template-columns: 1fr;         /* layar kecil: 1 kolom menurun */
+    gap: 36px;      
+    padding-bottom: 48px;              
+}
+
+.footer-logo {                          /* sesuaikan warna logo agar kontras di latar gelap */
+    color: #ffffff;                     /* teks logo putih */
+    margin-bottom: 16px; 
+}
+
+.footer-alamat {                        /* gaya teks alamat klinik */
+    font-size: 13px;                   /* ukuran teks kecil dan rapi */
+    line-height: 1.7;                   /* jarak antar baris alamat */
+    color: rgba(255, 255, 255, 0.75); /* putih lembut agar tidak terlalu menyilaukan */
+    margin-bottom: 20px; 
+}
+
+.sosial {                                   /* deretan ikon media sosial */
+    display: flex;                          /* sejajarkan ikon ke samping */
+    align-items: center; 
+    gap: 12px; 
+}
+
+.sosial a {                                 /* kotak kecil pembungkus tiap ikon */
+    width: 32px; 
+    height: 32px; 
+    display: grid; 
+    place-items: center; 
+    border-radius: 50%;                         /* bentuk lingkaran */
+    background: rgba(255, 255, 255, 0.12); 
+}
+
+.sosial img { 
+    width: 16px; 
+    height: 16px; 
+    object-fit: contain; 
+}
+
+.footer-kolom h4 {                      /* judul tiap kolom di sebelah kanan */
+    color: #ffffff;                 /* judul warna putih */
+    font-size: 15px;                /* ukuran judul kolom */
+    font-weight: 600;               /* ketebalan semi-bold */
+    margin-bottom: 16px; 
+}
+
+.footer-link {                          /* daftar item di tiap kolom */
+    display: grid;                      /* susun item ke bawah */
+    gap: 10px;
+    font-size: 13px;                    /* ukuran teks tautan */
+    color: rgba(255, 255, 255, 0.72);   /* warna teks tautan redup lembut */
+}
+
+.footer-link a:hover {              /* efek saat tautan disentuh kursor */
+    color: #ffffff;                /* berubah putih penuh saat hover */
+}
+
+.hak-cipta { 
+    border-top: 1px solid rgba(255, 255, 255, 0.12);       /* garis pemisah tipis di atas copyright */
+    padding-top: 20px;                                      /* jarak dari garis pemisah ke teks */
+    padding-bottom: 28px;                                  /* jarak bawah sebelum tepi layar */
+    text-align: center;                                    /* posisikan teks hak cipta di tengah */
+    font-size: 12px;                                        /* ukuran teks kecil */
+    color: rgba(255, 255, 255, 0.65); 
+}
+
+@media (min-width: 768px) { 
+    .footer-isi {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (min-width: 1024px) { 
+    .footer {
+        min-height: 394px; 
+        margin-top: 112px;                  /* jarak atas lebih lega di layar lebar */
+        padding-top: 72px; 
+    }
+
+    .footer-isi {
+        max-width: 1110px;         
+        margin: 0 auto; 
+        grid-template-columns: 1.4fr repeat(3, 1fr);        /* kolom brand lebih lebar, 3 kolom menu sejajar */
+        gap: 48px;                                          /* jarak antar kolom di desktop */
+        padding-bottom: 56px; 
+    }
+
+    .hak-cipta {
+        max-width: 1110px; 
+        margin: 0 auto;             
+    }
+}
